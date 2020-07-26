@@ -1,0 +1,23 @@
+.card-search {
+    position:relative;
+    opacity:1;
+    padding: 0;
+}
+.card-search:hover{
+    opacity:0.2;
+    z-index: 1;
+    background:rgba(43, 48, 43,0.5);
+}
+.car-search-title-area{ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    background: linear-gradient(to bottom, rgba(123, 135, 201, 0.4), rgba(22, 24, 22, 0.7));
+    z-index: 3;
+}
+.car-search-title-area h5{
+    font-weight: 700;
+    font-size: 30px;
+}

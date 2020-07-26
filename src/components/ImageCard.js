@@ -1,20 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './ImageCard.css'
 
 export default function ImageCard(props) {
-    console.log('ImageCard.props:', props)
+    let [isHover, setIsHover] = useState(false)
+    const showInfo = () => {
+        setIsHover(true)
+    }
+    const hideInfo = (event) => {
+        setIsHover(false)
+    }
 
     let fullUrl = `https://image.tmdb.org/t/p/original/${props.image}`
-    // let fullUrl = 'https://image.tmdb.org/t/p/original/'+ props.image 
-    return (
-        < div className="card col-md-4" >
-            <img className="card-img-top"
-                src={fullUrl}
-                alt="Card image cap" />
-            <div className="card-body">
-                <h5 className="card-title">{props.title}</h5>
-                <p className="card-text">{props.descript}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+
+    if (!isHover) {
+        return (
+            <div className="col-md-3 card bg-dark text-white card-image-search" onMouseOver={showInfo} onMouseLeave={hideInfo}>
+                <img className="card-img"
+                    src={fullUrl}
+                    alt="Card image" />
             </div>
-        </div >
-    )
+        )
+    } else {
+        return (
+            <div className="col-md-3 card bg-dark text-white card-image-search" onMouseOver={showInfo} onMouseLeave={hideInfo}>
+                <img className="card-img card-search" src={fullUrl} alt="Card image" />
+                <div className="card-img-overlay car-search-title-area">
+                    <h5 className="card-title">{props.title}</h5>
+                    <p id="rate-score" className="card-text">Rate {props.rate}</p>
+                    <p className="card-text">{props.descript}</p>
+                </div>
+            </div>
+        )
+    }
 }

@@ -1,0 +1,14 @@
+#nav-bar{
+  background-color: transparent !important;
+  transition: 250ms ease;
+}
+#nav-bar.scrolled {
+  background-color: rgba(36, 8, 8, 0.2);
+  transition: 750ms ease;
+}
+#nav-bar a{
+  font-weight: 900;
+}
+#nav-bar a:hover{
+  color: #ed1c24;
+}
