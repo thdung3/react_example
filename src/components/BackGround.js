@@ -30,8 +30,8 @@ export default function BackGround() {
                     <p className="lead text-white text-top10">#1 Vietnam today</p>
                     <p className="text-white">It uses utility classes for typography and spacing to space content out within the
                     larger container.</p>
-                    <a className="btn btn-play" href="#" role="button"><i className="fas fa-play"></i> Play</a>
-                    <a className="btn btn-info" href="#" role="button"><i className="fas fa-info-circle"></i> More
+                    <a className="btn btn-play" href="#home" role="button"><i className="fas fa-play"></i> Play</a>
+                    <a className="btn btn-info" href="#home" role="button"><i className="fas fa-info-circle"></i> More
                     information
                 </a>
                 </div>

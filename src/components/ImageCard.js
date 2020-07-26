@@ -17,13 +17,13 @@ export default function ImageCard(props) {
             <div className="col-md-3 card bg-dark text-white card-image-search" onMouseOver={showInfo} onMouseLeave={hideInfo}>
                 <img className="card-img"
                     src={fullUrl}
-                    alt="Card image" />
+                    alt="" />
             </div>
         )
     } else {
         return (
             <div className="col-md-3 card bg-dark text-white card-image-search" onMouseOver={showInfo} onMouseLeave={hideInfo}>
-                <img className="card-img card-search" src={fullUrl} alt="Card image" />
+                <img className="card-img card-search" src={fullUrl} alt="" />
                 <div className="card-img-overlay car-search-title-area">
                     <h5 className="card-title">{props.title}</h5>
                     <p id="rate-score" className="card-text">Rate {props.rate}</p>

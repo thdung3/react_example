@@ -69,9 +69,9 @@ function App() {
         setActivePage(pageNum);
     };
 
-    useEffect(() => {
+    useEffect(
         callAllApi()
-    }, [])
+        , [])
 
     if (!isReady) {
         return <div>

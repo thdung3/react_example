@@ -16,7 +16,6 @@ export default function ImageCardCarousel(props) {
         if (data.videos.results.length > 0) {
             setYoutubeLink(data.videos.results[0].key)
         }
-
     }
 
     const showInfo = () => {
@@ -71,16 +70,16 @@ export default function ImageCardCarousel(props) {
         event.data = YT.PlayerState.ENDED;
     }
 
-    useEffect(() => {
+    useEffect(
         callApiGetVideo()
-    }, [])
+        , [])
 
     if (!isHover) {
         return (
             <div className="col-md-2 card bg-dark text-white card-carousel" onMouseOver={showInfo} onMouseLeave={hideInfo}>
                 <img className="card-img card-carousel-img"
                     src={fullUrl}
-                    alt="Card image" />
+                    alt="" />
             </div>
         )
     } else if (youtubeLink === null) {
@@ -88,7 +87,7 @@ export default function ImageCardCarousel(props) {
             <div className="col-md-2 card bg-dark text-white card-carousel" onMouseOver={showInfo} onMouseLeave={hideInfo}>
                 <img className="card-img card-carousel-img"
                     src={fullUrl}
-                    alt="Card image" />
+                    alt="" />
                 <div className="row card-img-inside-area">
                     <div id="card-img-title-area" className="card-img-overlay col-sm-10">
                         <h5 className="card-title">{props.movie.title}</h5>

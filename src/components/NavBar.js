@@ -25,7 +25,7 @@ export default function NavBar(props) {
     }
     return (
         <nav id="nav-bar" className="navbar navbar-expand-lg fixed-top" onScroll={(e) => changeColor(e)}>
-            <a className="navbar-brand" href="#" onClick={() => props.backHome()}>LAVIE MOVIE</a>
+            <a className="navbar-brand" href="#home" onClick={() => props.backHome()}>LAVIE MOVIE</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@ export default function NavBar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#" onClick={() => props.backHome()}>Home <span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="#home" onClick={() => props.backHome()}>Home <span className="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <div id="btn-search">
