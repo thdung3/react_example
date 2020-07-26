@@ -70,9 +70,9 @@ export default function ImageCardCarousel(props) {
         event.data = YT.PlayerState.ENDED;
     }
 
-    useEffect(
+    useEffect(() => {
         callApiGetVideo()
-        , [])
+    }, [])
 
     if (!isHover) {
         return (
