@@ -21,3 +21,27 @@
     font-weight: 700;
     font-size: 30px;
 }
+#btn-play-trailer {
+    border: 2px solid white;
+    padding: 10px;
+    font-weight: 700;
+}
+#btn-play-trailer:hover {
+    cursor: pointer;
+    border: 2px solid #ed1c24;
+    color: #ed1c24;
+}
+.video-area{
+    padding: 10px;
+    margin-left: 20px;
+
+}
+#overview-title {
+    font-weight: 700;
+    font-size: 30px;
+    padding-left: 18px;
+}
+.modal-title{
+    font-weight: 700;
+}
+iframe img{width:480px;}

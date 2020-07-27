@@ -7,7 +7,12 @@ export default function ImageCardCarousel(props) {
     let [isHover, setIsHover] = useState(false)
     let [youtubeLink, setYoutubeLink] = useState(null)
     let fullUrl = `https://image.tmdb.org/t/p/original/${props.movie.poster_path}`
-    let year = (props.movie.release_date.split('-'))[0]
+    // let year = (props.movie.release_date.split('-'))[0]
+    let genres = props.movie.genre_ids.map(item => props.genresList.find(genre => genre.id === item).name)
+    let genreText = genres[0]
+    for (let i = 1; i < genres.length; i++) {
+        genreText += ' ° ' + genres[i]
+    }
 
     const callApiGetVideo = async () => {
         let url = `https://api.themoviedb.org/3/movie/${props.movie.id}?api_key=${apiKey}&language=en-US&append_to_response=videos`
@@ -92,7 +97,7 @@ export default function ImageCardCarousel(props) {
                     <div id="card-img-title-area" className="card-img-overlay col-sm-10">
                         <h5 className="card-title">{props.movie.title}</h5>
                         <p id="rate-score" className="card-text">Rate {props.movie.vote_average}</p>
-                        <p className="card-text">Year: {year}</p>
+                        <p className="card-text">{genreText}</p>
                     </div>
                     <div id="card-img-right-button" className="col-sm-2">
                         <i className="far fa-thumbs-up card-img-btn-right"></i>
@@ -106,13 +111,13 @@ export default function ImageCardCarousel(props) {
         return (
             <div className="card bg-dark text-white card-carousel" onMouseOver={showInfo} onMouseLeave={hideInfo}>
                 <div className="video-area">
-                    <YT opts={opts} videoId={youtubeLink} onReady={onPlayerReady} onMouseLeave={hideInfo} />
+                    <YT opts={opts} videoId={youtubeLink} onReady={onPlayerReady} onMouseLeave={hideInfo} showinfo={0} controls={0} />
                 </div>
                 <div className="row card-img-inside-area">
                     <div id="card-img-title-area" className="card-img-overlay col-sm-10">
                         <h5 className="card-title">{props.movie.title}</h5>
                         <p id="rate-score" className="card-text">Rate {props.movie.vote_average}</p>
-                        <p className="card-text">Year: {year}</p>
+                        <p className="card-text">{genreText}</p>
                     </div>
                     <div id="card-img-right-button" className="col-sm-2">
                         <i className="far fa-thumbs-up card-img-btn-right"></i>

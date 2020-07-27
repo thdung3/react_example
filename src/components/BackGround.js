@@ -28,8 +28,7 @@ export default function BackGround() {
                     </div>
 
                     <p className="lead text-white text-top10">#1 Vietnam today</p>
-                    <p className="text-white">It uses utility classes for typography and spacing to space content out within the
-                    larger container.</p>
+                    <p className="text-white">Plot. Andromache "Andy" of Scythia, Booker, Joe, and Nicky are centuries old warriors with regenerative healing abilities who use their vast experience to help people. Former CIA operative Copley hires them to rescue a group of kidnapped children in South Sudan.</p>
                     <a className="btn btn-play" href="#home" role="button"><i className="fas fa-play"></i> Play</a>
                     <a className="btn btn-info" href="#home" role="button"><i className="fas fa-info-circle"></i> More
                     information
