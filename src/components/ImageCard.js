@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './ImageCard.css'
 
+const defaultImage = '/image/no-image-found.png'
 export default function ImageCard(props) {
     let [isHover, setIsHover] = useState(false)
     const showInfo = () => {
@@ -16,14 +17,14 @@ export default function ImageCard(props) {
         return (
             <div className="col-md-3 card bg-dark text-white card-image-search" onMouseOver={showInfo} onMouseLeave={hideInfo}>
                 <img className="card-img"
-                    src={fullUrl}
+                    src={fullUrl || defaultImage}
                     alt="" />
             </div>
         )
     } else {
         return (
             <div className="col-md-3 card bg-dark text-white card-image-search" onMouseOver={showInfo} onMouseLeave={hideInfo}>
-                <img className="card-img card-search" src={fullUrl} alt="" />
+                <img className="card-img card-search" src={fullUrl || defaultImage} alt="" />
                 <div className="card-img-overlay car-search-title-area">
                     <h5 className="card-title">{props.title}</h5>
                     <p id="rate-score" className="card-text">Rate {props.rate}</p>
